@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Avatar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { gravatarPath } from "../gravatar";
+import MassageField from "./MassageField";
 
 const useStyles = makeStyles({
     root: {
@@ -12,8 +13,9 @@ const useStyles = makeStyles({
 });
 
 const MassageInputField = ({ name }) => {
-    const classes = useStyles();
+    const [text, setText] = useState('');
 
+    const classes = useStyles();
     const avatarPath = gravatarPath(name);
     return(
         <div className={classes.root}>
@@ -21,7 +23,9 @@ const MassageInputField = ({ name }) => {
                 <Grid item xs={1}>
                     <Avatar src={avatarPath}/>
                 </Grid>
-                <Grid item xs={10}>input</Grid>
+                <Grid item xs={10}>
+                    <MassageField name={name} setText={setText} text={text} />
+                </Grid>
                 <Grid item xs={1}>button</Grid>
             </Grid>
         </div>

@@ -18,7 +18,7 @@ const Main = ({ name }) => {
     <div className={classes.root}>
         <MassageList />
 
-        <MassageInputField />
+        <MassageInputField name={name} />
     </div>
     )
 };

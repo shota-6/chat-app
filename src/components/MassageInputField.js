@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { gravatarPath } from "../gravatar";
 import MassageField from "./MassageField";
+import MassageSubmitField from "./MassageSubmitField";
 
 const useStyles = makeStyles({
     root: {
@@ -26,7 +27,9 @@ const MassageInputField = ({ name }) => {
                 <Grid item xs={10}>
                     <MassageField name={name} setText={setText} text={text} />
                 </Grid>
-                <Grid item xs={1}>button</Grid>
+                <Grid item xs={1}>
+                    <MassageSubmitField name={name} setText={setText} text={text} />
+                </Grid>
             </Grid>
         </div>
     ) 

@@ -4,14 +4,16 @@ import SendIcon from "@material-ui/icons/Send";
 
 import { PushMessage } from "../firebase";
 
-const MassageSubmitField = ({ name, text, setText }) => {
+const MassageSubmitField = ({ inputEl, name, text, setText }) => {
   return (
-    <IconButton 
-    disabled={text === ''}
-    onClick={ () => { 
-        PushMessage({ name: 'test-san', text });
-        setText('');
-    }}>
+    <IconButton
+      disabled={text === ""}
+      onClick={() => {
+        PushMessage({ name: "test-san", text });
+        setText("");
+        inputEl.current.focus();
+      }}
+    >
       <SendIcon />
     </IconButton>
   );

@@ -19,7 +19,7 @@ const MassageField = ({ inputEl, name, text, setText }) => {
         if (text === "") return;
 
         if (e.key === "Enter") {
-          PushMessage({ name: "test-san", text });
+          PushMessage({ name, text });
           setText("");
           e.preventDefault();
         }

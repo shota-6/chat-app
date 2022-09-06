@@ -9,7 +9,7 @@ const MassageSubmitField = ({ inputEl, name, text, setText }) => {
     <IconButton
       disabled={text === ""}
       onClick={() => {
-        PushMessage({ name: "test-san", text });
+        PushMessage({ name, text });
         setText("");
         inputEl.current.focus();
       }}

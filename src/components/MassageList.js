@@ -8,8 +8,8 @@ import MessageItem from "./MessageItem";
 const useStyles = makeStyles({
   root: {
     gridRow: 1,
-    width: '100%',
-    overflow: 'auto',
+    width: "100%",
+    overflow: "auto",
   },
 });
 
@@ -36,10 +36,20 @@ const MassageList = () => {
       });
   }, []);
 
+  const length = messages.length;
+
   return (
     <List className={classes.root}>
-      {messages.map(({key,name,text}) => {
-        return <MessageItem key={key} name={name} text={text}>item</MessageItem>;
+      {messages.map(({ key, name, text }, index) => {
+        const isLastItem = length === index + 1;
+        return (
+          <MessageItem
+            key={key}
+            name={name}
+            text={text}
+            isLastItem={isLastItem}
+          />
+        );
       })}
     </List>
   );

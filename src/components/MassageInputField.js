@@ -9,7 +9,7 @@ import MassageSubmitField from "./MassageSubmitField";
 const useStyles = makeStyles({
   root: {
     gridRow: 2,
-    margin: "26px",
+    padding: '26px 16px',
   },
 });
 
@@ -23,7 +23,7 @@ const MassageInputField = ({ name }) => {
     <div className={classes.root}>
       <Grid container>
         <Grid item xs={1}>
-          <Avatar src={avatarPath} />
+          <Avatar src={avatarPath}/>
         </Grid>
         <Grid item xs={10}>
           <MassageField
